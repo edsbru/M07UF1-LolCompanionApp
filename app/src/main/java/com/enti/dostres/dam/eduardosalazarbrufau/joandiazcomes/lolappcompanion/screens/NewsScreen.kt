@@ -1,7 +1,8 @@
 package com.enti.dostres.dam.eduardosalazarbrufau.joandiazcomes.lolappcompanion.screens
 
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 
-class NewsScreen: Fragment() {
+
+class NewsScreen:  AppCompatActivity() {
 
 }
