@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="League of Legends\nApp Companion"
-        android:textSize="24dp"
+        android:textSize="@dimen/large"
         android:gravity="center"
         >
     </TextView>
@@ -64,5 +64,14 @@
         </com.google.android.material.textfield.TextInputEditText>
 
     </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/login_to_config_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pantalla config"
+        >
+
+    </Button>
 </androidx.appcompat.widget.LinearLayoutCompat>
 
