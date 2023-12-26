@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="League of Legends\nApp Companion"
+        android:text="@string/login_screen_title"
         android:textSize="@dimen/large"
         android:gravity="center"
         >
@@ -57,24 +57,97 @@
             app:startIconDrawable="@drawable/password_icon"
             android:hint="@string/field_password_label"
             >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword">
+
+            </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            >
-        </com.google.android.material.textfield.TextInputEditText>
-
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_to_config_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pantalla config"
-        >
 
-    </com.google.android.material.button.MaterialButton>
+    <!-- Caja del REpassword -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/repasswordInputContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        >
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/repasswordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/password_icon"
+            android:hint="@string/field_repassword_label"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <!-- Caja del Botón login-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/login_button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_button_text">
+        </com.google.android.material.button.MaterialButton>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Caja de texto Registro-->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_account_text"
+            android:textColor="@color/black"
+            android:textAlignment="center">
+
+        </com.google.android.material.textview.MaterialTextView>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <!-- Caja del Botón registro-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/register_button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/register_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register_button_text">
+        </com.google.android.material.button.MaterialButton>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        >
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/login_google_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.google.android.gms.common.SignInButton>
+    </androidx.cardview.widget.CardView>
+
 </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "567608992491",
+    "project_id": "lolappcompanion",
+    "storage_bucket": "lolappcompanion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567608992491:android:90ed95af09292f28b194ae",
+        "android_client_info": {
+          "package_name": "com.enti.dostres.dam.eduardosalazarbrufau.joandiazcomes.lolappcompanion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567608992491-0bche7e2c5cp5vkfigb42rhs5t7pg1ul.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.enti.dostres.dam.eduardosalazarbrufau.joandiazcomes.lolappcompanion",
+            "certificate_hash": "b03da383f35a9e9ba947a1172a684dbe3ef98a3a"
+          }
+        },
+        {
+          "client_id": "567608992491-t83cheivhu61jkrkmqo24cn1ojuafhsb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAruWTSbqWGsxWtfl3Tpnna3Xan1qaYtvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567608992491-t83cheivhu61jkrkmqo24cn1ojuafhsb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

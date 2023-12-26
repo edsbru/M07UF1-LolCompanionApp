@@ -22,13 +22,6 @@ class LoginScreen: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.login_screen, container, false)
-
-        val loginButton : Button = view.findViewById<Button>(R.id.login_to_config_button)
-        loginButton.setOnClickListener{
-            val fragment = ConfigScreen()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.mainActivityContainer, fragment)?.commit()
-        }
         return view
     }
 

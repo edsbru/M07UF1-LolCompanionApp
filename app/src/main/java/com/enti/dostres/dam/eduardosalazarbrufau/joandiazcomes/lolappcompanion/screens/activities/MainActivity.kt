@@ -6,6 +6,6 @@ import com.enti.dostres.dam.eduardosalazarbrufau.joandiazcomes.lolappcompanion.R
 
 class MainActivity: AppCompatActivity() {
     override fun setContentView(view: View?) {
-        super.setContentView(R.layout.main_activity)
+        super.setContentView(R.layout.login_screen)
     }
 }
