@@ -22,10 +22,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".screens.ConfiguracionActivity"
-            android:label="Settings" />
-
     </application>
 
 
