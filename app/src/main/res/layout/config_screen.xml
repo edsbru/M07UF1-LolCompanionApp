@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical">
 
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,41 +21,7 @@
         android:layout_height="wrap_content"
         android:text="Pantalla login"
         >
+
     </Button>
-    </LinearLayout>
-    <!-- Navigation hardcodeada, Incluir AL FINAL en BuildsScreen,SettingsScreen y ChampionsScreen-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginStart="@dimen/margin_normal"
-        android:layout_marginEnd="@dimen/margin_normal"
-        android:layout_marginBottom="@dimen/margin_normal"
-        android:orientation="horizontal"
-        android:gravity="center">
 
-        <Button
-            android:id="@+id/navigation_builds_button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/builds_text">
-        </Button>
-
-        <Button
-            android:id="@+id/navigation_create_build_button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/create_build_text"
-            android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginEnd="@dimen/margin_normal">
-        </Button>
-
-        <Button
-            android:id="@+id/navigation_settings_button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/settings_title">
-        </Button>
-
-    </LinearLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
