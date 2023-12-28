@@ -2,7 +2,6 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <!-- Navigation hardcodeada, Incluir AL FINAL en BuildsScreen,SettingsScreen y ChampionsScreen-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,4 +37,5 @@
         </Button>
 
     </LinearLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
