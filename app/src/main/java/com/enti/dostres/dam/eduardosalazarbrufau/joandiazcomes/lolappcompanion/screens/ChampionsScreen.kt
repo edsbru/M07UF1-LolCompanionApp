@@ -10,25 +10,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.enti.dostres.dam.eduardosalazarbrufau.joandiazcomes.lolappcompanion.R
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import java.net.URI
 import java.util.UUID
-
-
 class ChampionsScreen:  Fragment() {
 
     companion object {
-        private const val PICK_IMAGE_REQUEST = 71
+        private const val PICK_IMAGE_REQUEST = 1
     }
+    private lateinit var selectImageButton: Button
+    private lateinit var uploadImage: Button
     private lateinit var storage: FirebaseStorage
     private lateinit var storageReference: StorageReference
-    private lateinit var imagePreview: ImageView
+    private lateinit var selectedImage: ImageView
+    private var selectedImageUri: Uri? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        storageReference = FirebaseStorage.getInstance().reference
     }
 
     override fun onCreateView(
@@ -38,8 +39,9 @@ class ChampionsScreen:  Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.champions_screen, container, false)
 
-        val selectImageButton = view.findViewById<Button>(R.id.select_image_button)
-        imagePreview = view.findViewById(R.id.selected_image)
+        selectImageButton = view.findViewById(R.id.select_image_button)
+        uploadImage = view.findViewById(R.id.upload_image_button)
+        selectedImage = view.findViewById(R.id.selected_image)  // Cambié el nombre a selectedImage para que coincida con el ID del XML
 
         storage = FirebaseStorage.getInstance()
         storageReference = storage.reference
@@ -47,14 +49,19 @@ class ChampionsScreen:  Fragment() {
         selectImageButton.setOnClickListener {
             selectImage()
         }
+        uploadImage.setOnClickListener {
+            uploadImage()
+        }
+
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val buttonChangeToBuildsScreen = view?.findViewById<Button>(R.id.navigation_builds_button)
-        val buttonChangeToChampionsScreen = view?.findViewById<Button>(R.id.navigation_create_build_button)
-        val buttonChangeToConfigScreen = view?.findViewById<Button>(R.id.navigation_settings_button)
+
+        val buttonChangeToBuildsScreen = view.findViewById<Button>(R.id.navigation_builds_button)
+        val buttonChangeToChampionsScreen = view.findViewById<Button>(R.id.navigation_create_build_button)
+        val buttonChangeToConfigScreen = view.findViewById<Button>(R.id.navigation_settings_button)
 
         buttonChangeToBuildsScreen?.setOnClickListener {
             changeToBuildsScreen()
@@ -71,17 +78,8 @@ class ChampionsScreen:  Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
-            // Obtener la URI de la imagen seleccionada
-            val filePath = data.data
-
-            // Mostrar la vista previa de la imagen seleccionada
-            imagePreview.visibility = View.VISIBLE
-            imagePreview.setImageURI(filePath)
-
-            // Subir la imagen a Firebase Storage
-            if (filePath != null) {
-                uploadImage(filePath)
-            }
+            selectedImageUri = data.data
+            selectedImage.setImageURI(selectedImageUri)  // Usa la variable selectedImage aquí
         }
     }
 
@@ -116,26 +114,17 @@ class ChampionsScreen:  Fragment() {
     }
 
     private fun selectImage() {
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.type = "image/*"
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(intent, PICK_IMAGE_REQUEST)
     }
 
-    private fun uploadImage(filePath: Uri){
-        // Crear una referencia al lugar en Firebase Storage donde se almacenará la imagen
-        val storageRef = storageReference.child("images/${UUID.randomUUID()}")
+    private fun uploadImage() {
+        if (selectedImageUri != null) {
+            val imageName = UUID.randomUUID().toString()
+            val imageRef = storageReference.child("images/$imageName")
 
-        // Iniciar la carga de la imagen
-        val uploadTask = storageRef.putFile(filePath)
+            imageRef.putFile(selectedImageUri!!)
 
-        // Continuar con la tarea después de que la carga esté completa
-        uploadTask.continueWithTask { task ->
-            if (!task.isSuccessful) {
-                task.exception?.let {
-                    throw it
-                }
-            }
-            storageRef.downloadUrl
         }
     }
 }
