@@ -26,9 +26,18 @@ class ChampionsScreen:  Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val buttonChangeToBuildsScreen = view?.findViewById<Button>(R.id.navigation_builds_button)
         val buttonChangeToChampionsScreen = view?.findViewById<Button>(R.id.navigation_create_build_button)
+        val buttonChangeToConfigScreen = view?.findViewById<Button>(R.id.navigation_settings_button)
+
+        buttonChangeToBuildsScreen?.setOnClickListener {
+            changeToBuildsScreen()
+        }
         buttonChangeToChampionsScreen?.setOnClickListener {
             changeToChampionsScreen()
+        }
+        buttonChangeToConfigScreen?.setOnClickListener {
+            changeToConfigScreen()
         }
     }
 
@@ -43,23 +52,22 @@ class ChampionsScreen:  Fragment() {
     }
 
     private fun changeToChampionsScreen() {
-        val buildsScreen = ChampionsScreen()
+        val championsScreen = ChampionsScreen()
         val fragmentManager = requireActivity().supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
 
-        transaction.replace(R.id.mainFragmentContainer, buildsScreen)
+        transaction.replace(R.id.mainFragmentContainer, championsScreen)
         transaction.addToBackStack(null)
         transaction.commit()
     }
 
     private fun changeToConfigScreen() {
-        val buildsScreen = ConfigScreen()
+        val configScreen = ConfigScreen()
         val fragmentManager = requireActivity().supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
 
-        transaction.replace(R.id.mainFragmentContainer, buildsScreen)
+        transaction.replace(R.id.mainFragmentContainer, configScreen)
         transaction.addToBackStack(null)
         transaction.commit()
-
     }
 }
