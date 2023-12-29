@@ -6,6 +6,10 @@ import androidx.fragment.app.add
 import com.enti.dostres.dam.eduardosalazarbrufau.joandiazcomes.lolappcompanion.R
 import androidx.fragment.app.commit
 import com.enti.dostres.dam.eduardosalazarbrufau.joandiazcomes.lolappcompanion.screens.LoginScreen
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity: AppCompatActivity() {
 

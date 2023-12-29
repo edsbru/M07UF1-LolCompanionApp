@@ -1,6 +1,7 @@
 package com.enti.dostres.dam.eduardosalazarbrufau.joandiazcomes.lolappcompanion.screens.classes.firebase
 
 import android.app.Application
+import com.google.firebase.auth.FirebaseAuth
 
 typealias FB = MyFirebase
 class MyFirebase {
@@ -12,8 +13,8 @@ class MyFirebase {
         val db = MyFirebaseDatabase()
         val storage = MyFirebaseStorage()
         fun init(appContext: Application) {
-            analytics = MyFirebaseAnalytics(appContext)
             auth = MyFirebaseAuth(appContext)
+            analytics = MyFirebaseAnalytics(appContext)
         }
     }
 }

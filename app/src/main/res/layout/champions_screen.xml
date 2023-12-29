@@ -6,7 +6,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hola buenas tardes"
+        android:text="ChampionsScreen"
         android:textSize="20dp"
         ></TextView>
 
@@ -29,7 +29,7 @@
         </Button>
 
         <Button
-            android:id="@+id/navigation_create_build_screen"
+            android:id="@+id/navigation_create_build_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/create_build_text"

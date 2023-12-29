@@ -17,16 +17,19 @@ class MyFirebaseAuth(val appContext: Application) {
         currentUser = newUser
     }
 
-    fun getAuthDbUser() : DbUser? {
-        firebaseAuth.currentUser?.let { user->
+    fun getAuthDbUser(): DbUser? {
+        if (currentUser != null) {
+            return currentUser
+        }
+
+        firebaseAuth.currentUser?.let { user ->
             val dbUser = DbUser(
-                id=user.uid,
+                id = user.uid,
                 email = user.email,
                 username = user.displayName,
                 photoPath = user.photoUrl.toString()
             )
             return dbUser
-
         }
 
         return null
