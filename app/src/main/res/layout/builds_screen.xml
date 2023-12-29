@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -9,48 +11,38 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/champions_screen_text"
+            android:id="@+id/tituloBuilds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ChampionsScreen"
-            android:textSize="@dimen/large"
-            ></TextView>
+            android:text="Builds"
+            android:textSize="60sp" />
 
         <TextView
-            android:id="@+id/select_image_text"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/giant"
-            android:text="Select an image"
-            android:textSize="@dimen/large"
-            ></TextView>
+            android:text="NAUTILUS" />
 
-        <Button
-            android:id="@+id/select_image_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:text="Press to select image"
-            >
-        </Button>
-        
         <ImageView
-            android:id="@+id/selected_image"
+            android:id="@+id/imageView3"
+            android:layout_width="276dp"
+            android:layout_height="240dp"
+            app:srcCompat="@drawable/nautilus_0" />
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/image_icon">
+            app:srcCompat="@drawable/build">
+
         </ImageView>
 
-        <Button
-            android:id="@+id/upload_image_button"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editTextBuilds"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:text="upload image"
-            >
-        </Button>
+            android:hint="Write here"
+            android:textSize="20sp" />
     </LinearLayout>
-
 
 
     <!-- Navigation hardcodeada, Incluir AL FINAL en BuildsScreen,SettingsScreen y ChampionsScreen-->
@@ -61,31 +53,28 @@
         android:layout_marginStart="@dimen/margin_normal"
         android:layout_marginEnd="@dimen/margin_normal"
         android:layout_marginBottom="@dimen/margin_normal"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/navigation_builds_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/builds_text">
-        </Button>
+            android:text="@string/builds_text"></Button>
 
         <Button
             android:id="@+id/navigation_create_build_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/create_build_text"
             android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginEnd="@dimen/margin_normal">
-        </Button>
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:text="@string/create_build_text"></Button>
 
         <Button
             android:id="@+id/navigation_settings_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/settings_title">
-        </Button>
+            android:text="@string/settings_title"></Button>
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

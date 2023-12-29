@@ -8,31 +8,26 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.enti.dostres.dam.eduardosalazarbrufau.joandiazcomes.lolappcompanion.R
 
-class ConfigScreen : Fragment() {
+class BuildsScreen: Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        }
-
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.config_screen, container, false)
+        return inflater.inflate(R.layout.builds_screen, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnLogout = view.findViewById<Button>(R.id.btnLogout)
         val buttonChangeToBuildsScreen = view?.findViewById<Button>(R.id.navigation_builds_button)
         val buttonChangeToChampionsScreen = view?.findViewById<Button>(R.id.navigation_create_build_button)
         val buttonChangeToConfigScreen = view?.findViewById<Button>(R.id.navigation_settings_button)
 
-        btnLogout.setOnClickListener{
-            changeToLoginScreen()
-        }
         buttonChangeToBuildsScreen?.setOnClickListener {
             changeToBuildsScreen()
         }
@@ -42,18 +37,8 @@ class ConfigScreen : Fragment() {
         buttonChangeToConfigScreen?.setOnClickListener {
             changeToConfigScreen()
         }
-
     }
 
-    private fun changeToLoginScreen() {
-        val loginScreen = LoginScreen()
-        val fragmentManager = requireActivity().supportFragmentManager
-        val transaction = fragmentManager.beginTransaction()
-
-        transaction.replace(R.id.mainFragmentContainer, loginScreen)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
     private fun changeToBuildsScreen() {
         val buildsScreen = BuildsScreen()
         val fragmentManager = requireActivity().supportFragmentManager

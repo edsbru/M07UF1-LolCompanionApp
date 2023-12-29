@@ -1,27 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<!-- res/layout/config_screen.xml -->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-
     >
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Config Screen"
-        android:textSize="@dimen/large"
-        android:gravity="center"
-        >
-    </TextView>
-    <Button
-        android:id="@+id/config_to_login_button"
-        android:layout_width="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tituloConfiguracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="80sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pantalla login"
-        >
+        android:layout_gravity="center"
+        android:gravity="center">
 
-    </Button>
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout" />
 
-</LinearLayout>
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="167dp"
+        app:srcCompat="@drawable/bandera_de_espa_a_svg" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="98dp"
+        android:layout_marginHorizontal="260dp"
+        android:layout_marginTop="167dp"
+        app:srcCompat="@drawable/inglaterra" />
+
+    <!-- Navigation hardcodeada, Incluir AL FINAL en BuildsScreen,SettingsScreen y ChampionsScreen-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/navigation_builds_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/builds_text">
+        </Button>
+
+        <Button
+            android:id="@+id/navigation_create_build_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/create_build_text"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal">
+        </Button>
+
+        <Button
+            android:id="@+id/navigation_settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/settings_title">
+        </Button>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
