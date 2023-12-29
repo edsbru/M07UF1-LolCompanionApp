@@ -1,3 +1,4 @@
+package com.enti.dostres.dam.eduardosalazarbrufau.joandiazcomes.lolappcompanion.screens
 
 import android.os.Bundle
 import android.widget.EditText
