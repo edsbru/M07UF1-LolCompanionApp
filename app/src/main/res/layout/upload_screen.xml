@@ -6,15 +6,34 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".UploadImageActivity">
+    tools:context=".screens.UploadScreen">
 
     <Button
         android:id="@+id/btnPickImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seleccionar Imagen"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="550dp"
+        android:text="Select Image" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="Upload Build" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp"
+        android:textSize="30dp"
+        android:text="NAUTILUS BUILD" />
 
 
 </RelativeLayout>
