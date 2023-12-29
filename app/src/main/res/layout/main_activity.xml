@@ -4,25 +4,18 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <FrameLayout
-        android:id="@+id/mainActivityContainer"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mainFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
 
-        >
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MainActivity"
-        android:textSize="@dimen/large"
-        android:gravity="center"
-        >
+        ></androidx.fragment.app.FragmentContainerView>
 
-    </TextView>
-    </FrameLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
