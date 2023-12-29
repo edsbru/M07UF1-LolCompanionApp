@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.enti.dostres.dam.eduardosalazarbrufau.joandiazcomes.lolappcompanion.R
 
+
 class BuildsScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
